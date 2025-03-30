@@ -26,15 +26,22 @@ public class Player_Attack : MonoBehaviour
         if (curTime <= 0)
         {
             if (Input.GetKey(KeyCode.Q))
+            {
                 foreach (Collider2D collider in hit)
                 {
-                    if(collider.tag == "enemy")
+                    if (collider.tag == "enemy")
                     {
                         collider.GetComponent<enemy>().TakeDamage(/*stat.Damager*/10);
-                        curTime = coolTime;
+
                     }
-                   
+                    if (collider.tag == "Launcher")
+                    {
+                        collider.GetComponent<Launcher>().shot();
+
+                    }
                 }
+                curTime = coolTime;
+            }
         }
         else
         {

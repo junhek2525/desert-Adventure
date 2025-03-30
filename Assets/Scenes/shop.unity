@@ -561,9 +561,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1856027399}
-  - {fileID: 681566697}
   - {fileID: 3312602}
   - {fileID: 2146931788}
+  - {fileID: 681566697}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SSS
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -720,12 +720,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textchange: {fileID: 463215773}
   texts:
-  - "\uBA4D\uCCAD\uC774"
-  - "\uC18C\uB77C\uAC8C"
-  - "\uAF2C\uB9F9\uC774"
-  - "\uBC30\uBD88\uB69D\uC774"
-  - "\uAE30\uB9B0"
-  - "\uAE30\uB9B0"
+  - meongcheongi
+  - sorage
+  - kkomaengi
+  - baebulttugi
+  - girin
+  - jireongi
   ints: 0
 --- !u!1 &557229424
 GameObject:
@@ -1002,7 +1002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -395.83313, y: 419.28882}
+  m_AnchoredPosition: {x: -632, y: 453}
   m_SizeDelta: {x: 631.373, y: 122.8389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681566698
@@ -1235,7 +1235,7 @@ GameObject:
   - component: {fileID: 870812974}
   - component: {fileID: 870812973}
   - component: {fileID: 870812972}
-  - component: {fileID: 870812971}
+  - component: {fileID: 870812975}
   m_Layer: 5
   m_Name: image
   m_TagString: Untagged
@@ -1261,27 +1261,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -768, y: 378}
+  m_AnchoredPosition: {x: -768, y: 220}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &870812971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870812969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec3be0167bef50342a779bf5cae390aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 870812972}
-  price: 
-  textFields: []
-  gameManager: {fileID: 1700018682}
-  shopTexts: {fileID: 0}
-  shopTextnumber: {fileID: 802682301}
 --- !u!114 &870812972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1308,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 870812971}
+      - m_Target: {fileID: 870812975}
         m_TargetAssemblyTypeName: shopimage, Assembly-CSharp
         m_MethodName: OnbuttonClick
         m_Mode: 1
@@ -1376,6 +1358,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870812969}
   m_CullTransparentMesh: 1
+--- !u!114 &870812975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870812969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3be0167bef50342a779bf5cae390aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 870812972}
+  price: 0a0000000b0000000c0000000d0000000e000000
+  upgrades:
+  - '"ddd"'
+  - '"sss"'
+  images: []
+  sprites: []
+  gameManager: {fileID: 1700018682}
+  shopTexts: {fileID: 463215775}
+  shopTextnumber: {fileID: 802682301}
+  equipmentSystem: {fileID: 0}
 --- !u!1 &1089631334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,6 +1898,7 @@ GameObject:
   - component: {fileID: 1715662881}
   - component: {fileID: 1715662880}
   - component: {fileID: 1715662879}
+  - component: {fileID: 1715662882}
   m_Layer: 0
   m_Name: gamesceneManager
   m_TagString: Untagged
@@ -1941,6 +1947,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715662882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715662878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c9b285eb16de84ab7bb99fe5767ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife: knife
+  flashlight: flashlight
+  Oxygen_cylinders: Oxygen_cylinders
+  bag: bag
+  rope: rpoe
+  Expedition_Shirt: Expedition Shirt
+  Explorer_s_Hat: Explorer's Hat
+  Explorer_Boots: Explorer Boots
 --- !u!1 &1810187999
 GameObject:
   m_ObjectHideFlags: 0

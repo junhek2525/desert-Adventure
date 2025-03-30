@@ -25,9 +25,13 @@ public class EquipmentSystem : MonoBehaviour
     }
     public void upgrade(string equipment)
     {
-        //if()
-        //{
-
-        //}
+        if (equipment == "ddd")
+        {
+            Debug.Log("와! 샌즈!");
+        }
+        if (equipment == "sss")
+        {
+            Debug.Log("와! 게이!");
+        }
     }
 }

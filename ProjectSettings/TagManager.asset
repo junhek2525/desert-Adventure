@@ -6,6 +6,10 @@ TagManager:
   tags:
   - enemy
   - ground
+  - Launcher
+  - Arrow
+  - Cross Deit
+  - Arrival
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - UI
   - Player
   - ground
-  - 
+  - Puzzle
   - 
   - 
   - 

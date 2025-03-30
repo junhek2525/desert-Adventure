@@ -21,7 +21,15 @@ public class shopText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textchange.text = texts[ints];
+        if (ints < texts.Length - 1 && texts[ints +1] != null)
+        {
+            textchange.text = texts[ints];
+        }
+        else
+        {
+            textchange.text = "MAX";
+        }
+        
         
 
     }
