@@ -15,6 +15,7 @@ public class itemdata : MonoBehaviour
 
     }
    public Item Items ;
+    public Inventory Inventory;
     public stat stat;
     //List<int> numbers = new List<int>();
     // Start is called before the first frame update
@@ -29,22 +30,24 @@ public class itemdata : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        Debug.Log("´Ú00");
+        if (other.CompareTag("Player") && Inventory.Inventory_Maxnut >= Inventory.Inventory_nut.Count && Inventory.Maxweight >= Inventory.weight)
         {
-            item();
+            Debug.Log("µüÁ¶Å¸");
+            itemget();
             Destroy(gameObject);
         }
     }
-    void item()
+    void itemget()
     {
         switch (Items)
         {
             case Item.apple:
-                stat.Health += 50; 
+                Inventory.item("apple");
                 break;
                 
             case Item.Oxygen_cylinders:
-                stat.oxygen += 25;
+                Inventory.item("Oxygen_cylinders");
                 break;
 
             default:

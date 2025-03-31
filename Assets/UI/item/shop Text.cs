@@ -12,6 +12,7 @@ public class shopText : MonoBehaviour
     //public Text text;
 
     public int ints = 0;
+    public bool flex = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class shopText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(flex)
         if (ints < texts.Length - 1 && texts[ints +1] != null)
         {
             textchange.text = texts[ints];
@@ -29,7 +31,17 @@ public class shopText : MonoBehaviour
         {
             textchange.text = "MAX";
         }
-        
+        else
+        {
+            if(ints < texts.Length - 1 && texts[ints] != null)
+        {
+                textchange.text = texts[ints];
+            }
+        else
+            {
+                textchange.text = "MAX";
+            }
+        }
         
 
     }

@@ -8,6 +8,7 @@ public class Player_Move : MonoBehaviour
 
  
     public float moveSpeed = 5f;
+    public float high = 1f;
     private Rigidbody2D rb;
 
     public float moveInputX;
@@ -17,6 +18,7 @@ public class Player_Move : MonoBehaviour
     bool isFacingRightY;
 
     public Transform attackPos;
+    public stat stat;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,12 +59,12 @@ public class Player_Move : MonoBehaviour
         if (isFacingRightX && moveInputX < 0f || !isFacingRightX && moveInputX > 0f)
         {
             isFacingRightX = !isFacingRightX;
-            attackPos.localPosition = new Vector3(isFacingRightX ? 1f : -1f, 0f, 0f);
+            attackPos.localPosition = new Vector3(isFacingRightX ? stat.range[0] : -stat.range[0], 0f, 0f);
         }
         if ((isFacingRightY && moveInputY < 0f) || (!isFacingRightY && moveInputY > 0f))
         {
             isFacingRightY = !isFacingRightY;
-            attackPos.localPosition = new Vector3(0f, isFacingRightY ? 1f : -1f, 0f);
+            attackPos.localPosition = new Vector3(0f, isFacingRightY ? stat.range[0] : -stat.range[0], 0f);
         }
     }
 

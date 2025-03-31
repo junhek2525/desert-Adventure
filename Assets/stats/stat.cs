@@ -9,11 +9,18 @@ public class stat : MonoBehaviour
     public float MaxHealth = 100;
     public float oxygen ;
     public float Maxoxygen = 100;
-    public float Damager = 10;
+    
     public float Invincibility;
     public float MaxInvincibility = 1f;
     public float Oxygen_consumptiondown = 1;
-    public int money = 0 ;
+
+    public float Damager = 10;
+    public float attack_speed = 0.5f;
+    public float[] range = {1f,1f,1f };
+
+    
+
+    //public int money = 0 ;
 
 
 
@@ -40,10 +47,10 @@ public class stat : MonoBehaviour
         time += Time.deltaTime;
         HpUl.SetHealth(Health);
         oxygenUI.Setoxygen(oxygen);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Damage(10);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Damage(10);
+        //}
         if(time >= 1 )
         {
             Oxygen_consumption(Oxygen_consumptiondown);

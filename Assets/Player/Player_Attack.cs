@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Attack : MonoBehaviour
 {
+    
     public Vector2 boxSize = new Vector2(1.0f, 1.0f); // OverlapBox 크기
     public LayerMask groundLayer; // Ground 레이어를 설정
     public GameObject pos; // OverlapBox의 중심 위치를 지정할 변수
@@ -16,6 +17,7 @@ public class Player_Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boxSize = new Vector2(stat.range[1], stat.range[2]);
         rb = GetComponent<Rigidbody2D>();
     }
 

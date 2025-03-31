@@ -9,9 +9,9 @@ public class EquipmentSystem : MonoBehaviour
     public string Oxygen_cylinders = "Oxygen_cylinders";
     public string bag = "bag";
     public string rope = "rpoe";
-    public string Expedition_Shirt = "Expedition Shirt";
-    public string Explorer_s_Hat = "Explorer's Hat";
-    public string Explorer_Boots = "Explorer Boots";
+    public string Expedition_Shirt = "";
+    public string Explorer_s_Hat = "";
+    public string Explorer_Boots = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +23,50 @@ public class EquipmentSystem : MonoBehaviour
     {
         
     }
+
     public void upgrade(string equipment)
     {
-        if (equipment == "ddd")
+        Debug.Log(equipment);
+        if (equipment == "knife+1")
         {
-            Debug.Log("와! 샌즈!");
+            knife = "+1";
         }
-        if (equipment == "sss")
+        if (equipment == "knife+2")
         {
-            Debug.Log("와! 게이!");
+            knife = "+2";
         }
+        if(equipment == "Oxygen_cylinders+1")
+        {
+            Oxygen_cylinders = "+1";
+        }
+        if (equipment == "Oxygen_cylinders+2")
+        {
+            Oxygen_cylinders = "+2";
+        }
+        if (equipment == "Oxygen_cylinders+3")
+        {
+            Oxygen_cylinders = "+3";
+        }
+        if (equipment == "flashlight+1")
+        {
+            flashlight = "+1";
+        }
+        if (equipment == "flashlight+1")
+        {
+            flashlight = "+1";
+        }
+        if (equipment == "bag+1")
+        {
+            bag = "+1";
+        }
+        if (equipment == "bag+2")
+        {
+            bag = "+2";
+        }
+        if (equipment == "rope+1")
+        {
+            rope = "+1";
+        }
+
     }
 }
