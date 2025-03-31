@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     //[SerializeField] public string[] Inventory_nut;
     [SerializeField] public int Inventory_Maxnut = 4;
     [SerializeField] public int weight =0;
-    [SerializeField] public List<string> Inventory_nut = new List<string>();
+    [SerializeField] public List<string> Inventory_nut = new List<string> {  };
     [SerializeField] public int Maxweight = 1000;
 
 
@@ -29,12 +29,13 @@ public class Inventory : MonoBehaviour
     {
         for (int i=0; i < Inventory_Maxnut; i++)
         {
-            //if(Inventory_nut[i] == )
+            //if(Inventory_nut[i] >= )
             //{
 
             //}
             if(Inventory_nut[i] == "")
             {
+                
                 Inventory_nut.Add(item);
                 break;
             }
