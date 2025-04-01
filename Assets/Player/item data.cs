@@ -9,6 +9,14 @@ public class itemdata : MonoBehaviour
     {
         apple,
         Oxygen_cylinders,
+        map,
+        speeder_small,
+        speeder_big,
+        Dumple,
+        treasure_copper,
+        treasure_sliver,
+        treasure_gold,
+        treasure_diamond
 
 
 
@@ -31,11 +39,18 @@ public class itemdata : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("´Ú00");
-        if (other.CompareTag("Player") && Inventory.Inventory_Maxnut >= Inventory.Inventory_nut.Count && Inventory.Maxweight >= Inventory.weight)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("µüÁ¶Å¸");
-            itemget();
-            Destroy(gameObject);
+            if(Inventory.Inventory_Maxnut >= Inventory.Inventory_nut.Count)
+            {
+                if (Inventory.Maxweight >= Inventory.weight)
+                {
+                    Debug.Log("µüÁ¶Å¸");
+                    itemget();
+                    Destroy(gameObject);
+                }
+            }
+            
         }
     }
     void itemget()
@@ -50,8 +65,19 @@ public class itemdata : MonoBehaviour
                 Inventory.item("Oxygen_cylinders");
                 break;
 
+            case Item.map:
+                break;
+            case Item.speeder_small:
+                break;
+            case Item.speeder_big:
+                break;
+            case Item.Dumple:
+                break;
+            case Item.treasure_copper:
+                break;
             default:
                 break;
+
         }
 
     }
