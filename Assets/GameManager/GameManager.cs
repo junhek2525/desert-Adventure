@@ -14,7 +14,10 @@ public class GameManager : MonoBehaviour
     // 게임의 상태(예: 게임 진행 중, 게임 종료 등)를 관리하는 변수
     public enum GameState { Menu, Playing, GameOver }
     public GameState currentState = GameState.Menu;
+    public string[] treasure;
+    public bool[] itamsave;
 
+    
     void Awake()
     {
         // 싱글톤 패턴을 적용하여 인스턴스가 하나만 존재하도록 보장
@@ -66,4 +69,45 @@ public class GameManager : MonoBehaviour
     {
         return isGameOver;
     }
+
+    public void sale()
+    {
+        for(int i = 0; i < 8; i++)
+        {
+            if (treasure[i] == "treasure_copper")
+            {
+                moeny += 500;
+                treasure[i] = "";
+            }
+            else if(treasure[i] == "treasure_silver")
+            {
+                moeny += 1000;
+                treasure[i] = "";
+            }
+            else if(treasure[i] == "treasure_gold")
+            {
+                moeny += 2500;
+                treasure[i] = "";
+            }
+            else if (treasure[i] == "treasure_diamond")
+            {
+                moeny += 5000;
+                treasure[i] = "";
+            }
+            else
+            {
+                treasure[i] = "";
+            }
+
+        }
+    }
+
+
+
+
+
+
+
+
+
 }

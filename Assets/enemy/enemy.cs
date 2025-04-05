@@ -12,6 +12,7 @@ public class enemy : MonoBehaviour
     public Transform player;  // 플레이어의 Transform을 참조
     public float moveSpeed = 3f;  // 적의 이동 속도
     public float chaseRange = 10f;  // 추격 범위
+    public float ContactRange = 0.8f;
 
     private Rigidbody2D rb;  // Rigidbody2D 컴포넌트
     private Vector2 moveDirection;  // 이동 방향
@@ -50,7 +51,7 @@ public class enemy : MonoBehaviour
         {
             Vector2 direction = (player.position - transform.position).normalized;
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            if (distanceToPlayer <=1f && stat.Invincibility <= 0)
+            if (distanceToPlayer <= ContactRange && stat.Invincibility <= 0)
             {
             stat.Damage(10);
             stat.Invincibility = stat.MaxInvincibility;

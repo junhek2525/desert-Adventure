@@ -14,7 +14,7 @@ public class itemdata : MonoBehaviour
         speeder_big,
         Dumple,
         treasure_copper,
-        treasure_sliver,
+        treasure_silver,
         treasure_gold,
         treasure_diamond
 
@@ -23,13 +23,14 @@ public class itemdata : MonoBehaviour
 
     }
    public Item Items ;
-    public Inventory Inventory;
-    public stat stat;
+    private Inventory Inventory;
+    private stat stat;
     //List<int> numbers = new List<int>();
     // Start is called before the first frame update
     void Start()
     {
-        
+        Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        //Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -38,14 +39,15 @@ public class itemdata : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("´Ú00");
+        //Debug.Log("´Ú00");
         if (other.CompareTag("Player"))
         {
-            if(Inventory.Inventory_Maxnut >= Inventory.Inventory_nut.Count)
+            Debug.Log(Inventory.Inventory_nut[Inventory.Inventory_nut.Count - 1]);
+            if(Inventory.Inventory_nut[Inventory.Inventory_nut.Count - 1] == "")
             {
-                if (Inventory.Maxweight >= Inventory.weight)
+                if (Inventory.Maxweight > Inventory.weight)
                 {
-                    Debug.Log("µüÁ¶Å¸");
+                    //Debug.Log("µüÁ¶Å¸");
                     itemget();
                     Destroy(gameObject);
                 }
@@ -60,20 +62,32 @@ public class itemdata : MonoBehaviour
             case Item.apple:
                 Inventory.item("apple");
                 break;
-                
             case Item.Oxygen_cylinders:
                 Inventory.item("Oxygen_cylinders");
                 break;
-
             case Item.map:
+                Inventory.item("map");
                 break;
             case Item.speeder_small:
+                Inventory.item("speeder_small");
                 break;
             case Item.speeder_big:
+                Inventory.item("speeder_big");
                 break;
             case Item.Dumple:
+                Inventory.item("Dumple");
                 break;
             case Item.treasure_copper:
+                Inventory.item("treasure_copper");
+                break;
+            case Item.treasure_silver:
+                Inventory.item("treasure_silver");
+                break;
+            case Item.treasure_gold:
+                Inventory.item("treasure_gold");
+                break;
+            case Item.treasure_diamond:
+                Inventory.item("treasure_diamond");
                 break;
             default:
                 break;

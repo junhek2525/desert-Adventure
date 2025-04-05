@@ -6,16 +6,24 @@ using UnityEngine.SceneManagement;
 public class ceneChanger : MonoBehaviour
 {
     public string Scene = "";
-
+    //public GameManager GameManager;
+    public Inventory Inventory;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        Inventory inventory = FindObjectOfType<Inventory>();
+        
+        if (inventory != null)
         {
-            scenechage();
+            inventory.other();
         }
+        scenechage();
     }
     void scenechage()
+    {
+        SceneManager.LoadScene(Scene);
+    }
+    public void OnButtonClick()
     {
         SceneManager.LoadScene(Scene);
     }

@@ -10,6 +10,7 @@ TagManager:
   - Arrow
   - Cross Deit
   - Arrival
+  - Inventory
   layers:
   - Default
   - TransparentFX

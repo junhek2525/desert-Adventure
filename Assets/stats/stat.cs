@@ -16,6 +16,8 @@ public class stat : MonoBehaviour
 
     public float Damager = 10;
     public float attack_speed = 0.5f;
+    public int stage = 0;
+
     public float[] range = {1f,1f,1f };
 
     

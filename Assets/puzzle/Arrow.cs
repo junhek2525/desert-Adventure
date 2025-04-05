@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 1f;
 
     void Start()
     {
         // 화살이 발사된 후 일정 시간 뒤 자동으로 삭제
-        Destroy(gameObject, 5f); // 5초 후 화살 삭제
+        Destroy(gameObject, 3f); // 3초 후 화살 삭제
     }
 
     void Update()
     {
-        //Vector2 direction = 
+        Vector2 direction = transform.position;
         // 화살이 전방으로 계속 이동하도록
-        //transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
