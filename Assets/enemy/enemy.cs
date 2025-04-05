@@ -9,10 +9,12 @@ public class enemy : MonoBehaviour
 
     public stat stat;
 
-    public Transform player;  // 플레이어의 Transform을 참조
+    public Transform Player;  // 플레이어의 Transform을 참조
     public float moveSpeed = 3f;  // 적의 이동 속도
     public float chaseRange = 10f;  // 추격 범위
     public float ContactRange = 0.8f;
+    //public BoxCollider2D chase;
+    //public BoxCollider2D attack;
 
     private Rigidbody2D rb;  // Rigidbody2D 컴포넌트
     private Vector2 moveDirection;  // 이동 방향
@@ -39,29 +41,37 @@ public class enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-
+        distanceToPlayer = Vector2.Distance(transform.position, Player.position);  // 플레이어와 적 간의 거리 계산
+        Debug.Log(distanceToPlayer);
+        if (distanceToPlayer <= chaseRange)
+            {
+                Vector2 direction = (Player.position - transform.position).normalized;
+                transform.position = Vector2.MoveTowards(transform.position, Player.position, moveSpeed * Time.deltaTime);
+                //Debug.Log("chase");
+            }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        distanceToPlayer = Vector2.Distance(transform.position, player.position);  // 플레이어와 적 간의 거리 계산
-        //Debug.Log(distanceToPlayer);
-        Debug.Log(Health);
-        if (other.CompareTag("Player") )
+
+
+        //Debug.Log(Health);
+        
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.CompareTag("Player") && stat.Invincibility <= 0)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            if (distanceToPlayer <= ContactRange && stat.Invincibility <= 0)
-            {
+            Debug.Log("1");
             stat.Damage(10);
-            stat.Invincibility = stat.MaxInvincibility;
-            }
+                stat.Invincibility = stat.MaxInvincibility;
+                Debug.Log("attack");
+            
             
         }
     }
     //private void OnTriggerEnter2D(BoxCollider2D other)
     //{
-        
+
     //}
     public void TakeDamage(float damage)
     {

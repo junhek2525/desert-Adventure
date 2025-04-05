@@ -33,7 +33,7 @@ public class stat : MonoBehaviour
     public oxygenUI oxygenUI;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         oxygen = Maxoxygen;
         Health = MaxHealth;

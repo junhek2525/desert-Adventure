@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     // 게임 상태나 점수 등의 데이터를 여기에 저장
     public int moeny = 0;
+    public int Score = 0;
+    public int time = 0;
     public bool isGameOver = false;
 
     // 게임의 상태(예: 게임 진행 중, 게임 종료 등)를 관리하는 변수
