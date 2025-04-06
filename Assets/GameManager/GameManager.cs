@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
         return isGameOver;
     }
 
+    
     public void sale()
     {
         for(int i = 0; i < 8; i++)

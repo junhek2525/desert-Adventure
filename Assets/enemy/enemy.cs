@@ -36,7 +36,7 @@ public class enemy : MonoBehaviour
             Destroy(gameObject);
         }
         distanceToPlayer = Vector2.Distance(transform.position, Player.position);  // 플레이어와 적 간의 거리 계산
-        Debug.Log(distanceToPlayer);
+        //Debug.Log(distanceToPlayer);
         if (distanceToPlayer <= chaseRange)
             {
                 Vector2 direction = (Player.position - transform.position).normalized;

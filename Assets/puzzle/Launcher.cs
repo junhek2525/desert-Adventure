@@ -21,10 +21,7 @@ public class Launcher : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -38,41 +35,39 @@ public class Launcher : MonoBehaviour
         //}
 
 
-
-        //switch (currentDirection)
-        //{
-        //    case Direction.Up:
-        //        transform.rotation = Quaternion.Euler(0, 0, 0); // 위쪽
-        //        break;
-        //    case Direction.Down:
-        //        transform.rotation = Quaternion.Euler(0, 0, 180); // 아래쪽
-        //        break;
-        //    case Direction.Left:
-        //        transform.rotation = Quaternion.Euler(0, 0, 90); // 왼쪽
-        //        break;
-        //    case Direction.Right:
-        //        transform.rotation = Quaternion.Euler(0, 0, -90); // 오른쪽
-        //        break;
-        //}
-
-        if(curtime <=0f)
+        Debug.Log("dd");
+        switch (currentDirection)
         {
-            Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+            case Direction.Up:
+                transform.rotation = Quaternion.Euler(0, 0, 0); // 위쪽
+                break;
+            case Direction.Down:
+                transform.rotation = Quaternion.Euler(0, 0, 180); // 아래쪽
+                break;
+            case Direction.Left:
+                transform.rotation = Quaternion.Euler(0, 0, 90); // 왼쪽
+                break;
+            case Direction.Right:
+                transform.rotation = Quaternion.Euler(0, 0, -90); // 오른쪽
+                break;
+        }
+
+        if (curtime <=0f)
+        {
+            Instantiate(objectToSpawn, transform.position, transform.rotation);
             curtime = cooltime;
         }
-        else
-        {
-            curtime -= Time.deltaTime;
-        }
+        
         
 
     }
 
 
-    
 
-    //void Update()
-    //{
-        
-    //}
+
+    void Update()
+    {
+        if(curtime > 0f)
+        curtime -= Time.deltaTime;
+    }
 }

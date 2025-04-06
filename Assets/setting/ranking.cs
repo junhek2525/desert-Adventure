@@ -26,8 +26,13 @@ public class ranking : MonoBehaviour
     {
         GameManager.instance.Score.Add((int)GameManager.instance.time);
         GameManager.instance.Score.Sort();
-        int timeM = (int)GameManager.instance.time /60;
+       
+    } 
+    public void Time()
+    {
+        int timeM = (int)GameManager.instance.time / 60;
         int timeS = (int)GameManager.instance.time % 60;
         timeResultText.text = "Time :" + timeM.ToString("D2") + ":" + timeS.ToString("D2");
     }
+    
 }
