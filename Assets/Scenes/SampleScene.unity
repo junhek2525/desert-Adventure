@@ -1609,7 +1609,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &391742128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2317,6 +2317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moeny: 0
+  Score: 0
+  time: 0
   isGameOver: 0
   currentState: 0
   treasure:
@@ -23372,6 +23374,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5384526669693319678, guid: 3f89864d690722845b350699ed4b415f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8098976614144115914, guid: 3f89864d690722845b350699ed4b415f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.46
@@ -23414,6 +23420,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8595010389974200906, guid: 3f89864d690722845b350699ed4b415f, type: 3}
       propertyPath: m_Name
+      value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595010389974200906, guid: 3f89864d690722845b350699ed4b415f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595010389974200906, guid: 3f89864d690722845b350699ed4b415f, type: 3}
+      propertyPath: m_TagString
       value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8994968691535093787, guid: 3f89864d690722845b350699ed4b415f, type: 3}

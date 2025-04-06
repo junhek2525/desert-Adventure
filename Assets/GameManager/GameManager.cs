@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     // 게임 상태나 점수 등의 데이터를 여기에 저장
     public int moeny = 0;
-    public int Score = 0;
+    public List<int> Score;
     public int time = 0;
     public bool isGameOver = false;
 
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         
         isGameOver = false;
         currentState = GameState.Playing;
+        Score = new List<int>();
     }
 
     // 게임 상태 변경 함수 예시

@@ -13,18 +13,12 @@ public class enemy : MonoBehaviour
     public float moveSpeed = 3f;  // 적의 이동 속도
     public float chaseRange = 10f;  // 추격 범위
     public float ContactRange = 0.8f;
-    //public BoxCollider2D chase;
-    //public BoxCollider2D attack;
+    
 
     private Rigidbody2D rb;  // Rigidbody2D 컴포넌트
     private Vector2 moveDirection;  // 이동 방향
 
-    //public Vector2 boxSize = new Vector2(1.0f, 1.0f); // OverlapBox 크기
-    //public LayerMask groundLayer; // Ground 레이어를 설정
-    //public GameObject pos; // OverlapBox의 중심 위치를 지정할 변수
-
-    //float curTime;
-    //float coolTime = 0.5f;
+    
 
     // Start is called before the first frame update
 
@@ -59,7 +53,7 @@ public class enemy : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.CompareTag("Player") && stat.Invincibility <= 0)
+        if (other.gameObject.CompareTag("Player") && stat.Invincibility <= 0)
         {
             Debug.Log("1");
             stat.Damage(10);

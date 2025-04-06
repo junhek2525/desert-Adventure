@@ -32,21 +32,28 @@ public class Launcher : MonoBehaviour
     //}
     public void shot()
     {
-        switch (currentDirection)
-        {
-            case Direction.Up:
-                transform.rotation = Quaternion.Euler(0, 0, 0); // 위쪽
-                break;
-            case Direction.Down:
-                transform.rotation = Quaternion.Euler(0, 0, 180); // 아래쪽
-                break;
-            case Direction.Left:
-                transform.rotation = Quaternion.Euler(0, 0, 90); // 왼쪽
-                break;
-            case Direction.Right:
-                transform.rotation = Quaternion.Euler(0, 0, -90); // 오른쪽
-                break;
-        }
+        //if()
+        //{
+
+        //}
+
+
+
+        //switch (currentDirection)
+        //{
+        //    case Direction.Up:
+        //        transform.rotation = Quaternion.Euler(0, 0, 0); // 위쪽
+        //        break;
+        //    case Direction.Down:
+        //        transform.rotation = Quaternion.Euler(0, 0, 180); // 아래쪽
+        //        break;
+        //    case Direction.Left:
+        //        transform.rotation = Quaternion.Euler(0, 0, 90); // 왼쪽
+        //        break;
+        //    case Direction.Right:
+        //        transform.rotation = Quaternion.Euler(0, 0, -90); // 오른쪽
+        //        break;
+        //}
 
         if(curtime <=0f)
         {
